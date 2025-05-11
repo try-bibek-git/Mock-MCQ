@@ -12,6 +12,9 @@ const geistSans = Geist({
 export const metadata: Metadata = {
   title: 'PDFPrep - AI Powered Test Preparation',
   description: 'Generate MCQs and Mock Tests from your PDF documents using AI.',
+  icons: {
+    icon: '/favicon.svg',
+  },
 };
 
 export default function RootLayout({
