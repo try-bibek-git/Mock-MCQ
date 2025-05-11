@@ -10,7 +10,7 @@ To run this project locally, follow these steps:
 
 1.  **Clone the repository:**
     ```bash
-    git clone <your-repository-url>
+    git clone <your-repository-url](https://github.com/try-bibek-git/Mock-MCQ.git>
     ```
     (Replace `<your-repository-url>` with the actual URL of your repository. If you downloaded the project as a ZIP file, you can skip this step and unzip the file.)
 
