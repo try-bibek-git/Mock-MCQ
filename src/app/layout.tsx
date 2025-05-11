@@ -4,6 +4,7 @@ import './globals.css';
 import { Toaster } from "@/components/ui/toaster";
 import AppHeader from '@/components/app-header';
 import AppFooter from '@/components/app-footer';
+import { ThemeProvider } from "@/components/theme-provider";
 
 const geistSans = Geist({
   variable: '--font-geist-sans',
@@ -26,12 +27,19 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body className={`${geistSans.variable} font-sans antialiased flex flex-col min-h-screen`}>
-        <AppHeader />
-        <main className="flex-grow container mx-auto px-4 py-8">
-          {children}
-        </main>
-        <AppFooter />
-        <Toaster />
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
+        >
+          <AppHeader />
+          <main className="flex-grow container mx-auto px-4 py-8">
+            {children}
+          </main>
+          <AppFooter />
+          <Toaster />
+        </ThemeProvider>
       </body>
     </html>
   );

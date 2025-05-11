@@ -19,19 +19,17 @@ PDFPrep is an innovative web application that transforms PDF documents into inte
 
 ### Installation
 
-1. Clone the repository:
+1. Clone the repository and navigate to the project directory:
 
    ```bash
    git clone https://github.com/try-bibek-git/Mock-MCQ.git
    cd Mock-MCQ
    ```
 
-2. Install dependencies:
+2. Install all dependencies (this will install everything needed, including next-themes):
 
    ```bash
    npm install
-   # or
-   yarn install
    ```
 
 3. Create a `.env` file in the root directory and add your environment variables:
@@ -40,11 +38,13 @@ PDFPrep is an innovative web application that transforms PDF documents into inte
    GEMINI_API_KEY="YOUR_GEMINI_API_URL"
    ```
 
-4. Run the development server:
+4. Start the development server:
 
+   ```bash
    npm run dev
+   ```
 
-5. Open your web browser and navigate to [http://localhost:5000](http://localhost:5000
+5. Open your web browser and navigate to [http://localhost:5000](http://localhost:5000)
 
 ## 🛠️ Built With
 

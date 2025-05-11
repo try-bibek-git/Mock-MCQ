@@ -1,6 +1,6 @@
-
 import { BookOpenCheck } from 'lucide-react';
 import Link from 'next/link';
+import { ThemeToggle } from './theme-toggle';
 
 export default function AppHeader() {
   return (
@@ -10,7 +10,9 @@ export default function AppHeader() {
           <BookOpenCheck size={32} strokeWidth={2.5} />
           <h1 className="text-2xl font-bold tracking-tight">PDFPrep</h1>
         </Link>
-        {/* Future navigation items can go here */}
+        <div className="flex items-center gap-4">
+          <ThemeToggle />
+        </div>
       </div>
     </header>
   );
