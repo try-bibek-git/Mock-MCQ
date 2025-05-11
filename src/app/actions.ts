@@ -1,3 +1,4 @@
+// src/app/actions.ts
 'use server';
 
 import { generateMcqs } from '@/ai/flows/generate-mcqs';
@@ -5,7 +6,7 @@ import type { GenerateMcqsOutput } from '@/ai/flows/generate-mcqs';
 import { createMockTestPaper } from '@/ai/flows/create-mock-test';
 import type { CreateMockTestPaperOutput } from '@/ai/flows/create-mock-test';
 import type { GeneratedMcqItem, MockTestCreationParams } from '@/types';
-import pdf from 'pdf-parse';
+// Removed static import: import pdf from 'pdf-parse';
 
 export async function processPdfAndGenerateMcqs(formData: FormData): Promise<{ mcqs?: GeneratedMcqItem[]; error?: string }> {
   const file = formData.get('pdfFile') as File;
@@ -19,6 +20,7 @@ export async function processPdfAndGenerateMcqs(formData: FormData): Promise<{ m
   }
 
   try {
+    const pdf = (await import('pdf-parse')).default; // Dynamically import pdf-parse
     const fileBuffer = Buffer.from(await file.arrayBuffer());
     const data = await pdf(fileBuffer);
     const pdfText = data.text;
@@ -47,6 +49,10 @@ export async function processPdfAndGenerateMcqs(formData: FormData): Promise<{ m
 
   } catch (e: any) {
     console.error('Error processing PDF and generating MCQs:', e);
+    // Check if the error is the specific ENOENT for './test/data/05-versions-space.pdf'
+    if (e.message && e.message.includes("ENOENT: no such file or directory, open './test/data/05-versions-space.pdf'")) {
+      return { error: "Failed to process PDF: A required library component ('pdf-parse' or 'pdf.js-dist') encountered an internal file access error. This might be due to an environment configuration issue." };
+    }
     return { error: e.message || 'An unexpected error occurred while processing the PDF.' };
   }
 }
