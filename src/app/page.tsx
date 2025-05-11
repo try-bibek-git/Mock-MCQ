@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import { AlertCircle, CheckCircle } from 'lucide-react';
+import { AlertCircle, CheckCircle, BookOpen } from 'lucide-react';
 import PdfUploadForm from '@/components/pdf-prep/pdf-upload-form';
 import GeneratedMcqList from '@/components/pdf-prep/generated-mcq-list';
 import MockTestRequestForm from '@/components/pdf-prep/mock-test-request-form';
@@ -59,6 +59,17 @@ export default function PdfPrepPage() {
 
   return (
     <div className="flex flex-col items-center space-y-10 py-6">
+      <div className="text-center space-y-4 max-w-3xl mx-auto px-4">
+        <h1 className="text-4xl font-bold tracking-tight text-primary flex items-center justify-center gap-2">
+          <BookOpen className="h-8 w-8" />
+          PDFPrep
+        </h1>
+        <p className="text-xl text-muted-foreground">
+          Transform your PDF documents into interactive learning materials with AI-powered MCQ generation and mock test creation.
+          Perfect for students, teachers, and educational content creators.
+        </p>
+      </div>
+
       {error && (
         <Alert variant="destructive" className="w-full max-w-xl">
           <AlertCircle className="h-4 w-4" />
