@@ -3,6 +3,7 @@ import {Geist} from 'next/font/google'; // Keep Geist Sans, remove Geist Mono if
 import './globals.css';
 import { Toaster } from "@/components/ui/toaster";
 import AppHeader from '@/components/app-header';
+import AppFooter from '@/components/app-footer';
 
 const geistSans = Geist({
   variable: '--font-geist-sans',
@@ -29,6 +30,7 @@ export default function RootLayout({
         <main className="flex-grow container mx-auto px-4 py-8">
           {children}
         </main>
+        <AppFooter />
         <Toaster />
       </body>
     </html>
