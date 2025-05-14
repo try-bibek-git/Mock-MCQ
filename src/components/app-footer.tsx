@@ -17,7 +17,7 @@ export default function AppFooter() {
               <Github className="h-5 w-5" />
             </Link>
             <Link 
-              href="https://www.instagram.com/your_instagram"
+              href="https://www.instagram.com/preeds_fps"
               target="_blank"
               rel="noopener noreferrer"
               className="text-muted-foreground hover:text-foreground transition-colors"
@@ -26,7 +26,7 @@ export default function AppFooter() {
               <Instagram className="h-5 w-5" />
             </Link>
             <Link 
-              href="https://www.linkedin.com/in/your_linkedin"
+              href="https://www.linkedin.com/in/bibek-biswas-7b7a2b2b3/"
               target="_blank"
               rel="noopener noreferrer"
               className="text-muted-foreground hover:text-foreground transition-colors"
@@ -37,7 +37,7 @@ export default function AppFooter() {
           </div>
           <div className="flex flex-col items-center gap-2">
             <p className="text-sm text-muted-foreground">
-              © {new Date().getFullYear()} bibek2025
+              © {new Date().getFullYear()}BibekBiswas
             </p>
             <p className="text-xs text-muted-foreground/70">
               Built with Next.js and Tailwind CSS
