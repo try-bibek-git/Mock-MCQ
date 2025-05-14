@@ -32,7 +32,7 @@ const prompt = ai.definePrompt({
   output: {schema: CreateMockTestPaperOutputSchema},
   prompt: `You are an expert in creating mock test papers.
 
-You will receive a list of multiple-choice questions and a topic. Your task is to create a mock test paper using the provided questions. The test paper should have the specified number of questions and cover the given topic.
+You will receive a topic. Your task is to create a mock test paper using the provided topic. The test paper should have the specified number of questions and cover the given topic.
 
 Topic: {{{topic}}}
 Number of Questions: {{{numQuestions}}}
@@ -40,7 +40,8 @@ Multiple-Choice Questions:
 {{#each mcqs}}{{{this}}}
 {{/each}}
 
-Create a mock test paper with the specified number of questions, based on the topic and MCQs.
+Create a mock test paper with the specified number of questions, based on the topic provided.
+Generate the Mock Test in a Question Paper Layout.
 `,
 });
 
