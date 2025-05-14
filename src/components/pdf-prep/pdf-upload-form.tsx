@@ -69,16 +69,18 @@ export default function PdfUploadForm({ onMcqsGenerated, onError, setIsLoading, 
         <form onSubmit={handleSubmit} className="space-y-6">
           <div className="space-y-2">
             <Label htmlFor="pdfFile" className="text-base font-medium">PDF File</Label>
-            <Input
-              id="pdfFile"
-              name="pdfFile"
-              type="file"
-              accept=".pdf"
-              ref={fileInputRef}
-              onChange={handleFileChange}
-              required
-              className="file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-semibold file:bg-accent file:text-accent-foreground hover:file:bg-accent/90"
-            />
+            <div className="relative">
+              <Input
+                id="pdfFile"
+                name="pdfFile"
+                type="file"
+                accept=".pdf"
+                ref={fileInputRef}
+                onChange={handleFileChange}
+                required
+                className="file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-semibold file:bg-accent file:text-accent-foreground hover:file:bg-accent/90 px-4 h-13"
+              />
+            </div>
             {fileName && <p className="text-sm text-muted-foreground mt-1">Selected file: {fileName}</p>}
           </div>
           <Button type="submit" className="w-full bg-accent hover:bg-accent/90 text-accent-foreground text-lg py-6" disabled={isLoading}>
